@@ -2,30 +2,35 @@
     <head>
         <title>TODO LIST</title>
         <script>
-            var task="";
-            var index=0;
-            var index1=0;
-            // function Add(){
-            //     index+=1;
-            //     index1+=1;
-            //     task+="<li id="+index+">";
-            //     task+="<input type="+"radio"+" id="+index1+">";
-            //     task+=document.getElementById("tasks").value;
-            //     task+="</li>";
-            //     document.getElementById("list").innerHTML=task;
-            // }
-            function Delete(){
-                var i = document.getElementById()
-            }
+            var index=1;
             function Add(){
                 var list=document.createElement("li");
+                list.setAttribute("id","item");
                 var text=document.createTextNode(document.getElementById("tasks").value);
-                list.appendChild(text);
                 if(document.getElementById("tasks").value === ""){
                     alert("Please enter any Task!!!");
                 }
                 else{
+                    var radio=document.createElement("input");
+                    list.appendChild(text);
+                    var close=document.createElement("input");
+                    close.setAttribute("type","button");
+                    close.setAttribute("value","Delete");
+                    close.setAttribute("id","id"+index);
+                    close.setAttribute("onclick","Delete(id"+index+")");
+                    close.className="delete";
+                    list.appendChild(close);
                     document.getElementById("ulist").appendChild(list);
+                    index+=1;
+                }
+            }
+            function Delete(x){
+                var a=document.getElementsByClassName("delete");
+                for(i=0;i<a.length;i++){
+                    if(a[i].id===x.id){
+                        var a=a[i].parentElement;
+                        a.style.display="none";
+                    }
                 }
             }
         </script>
@@ -36,6 +41,5 @@
         <button onclick="Add()">Add</button>
         <ul id="ulist">
         </ul>
-        <button onclick="Delete()">Delete</button>
     </body>
 </html>

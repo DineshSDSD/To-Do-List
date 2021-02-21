@@ -5,17 +5,28 @@
             var task="";
             var index=0;
             var index1=0;
-            function Add(){
-                index+=1;
-                index1+=1;
-                task+="<li id="+index+">";
-                task+="<input type="+"radio"+" id="+index1+">";
-                task+=document.getElementById("tasks").value;
-                task+="</li>";
-                document.getElementById("list").innerHTML=task;
-            }
+            // function Add(){
+            //     index+=1;
+            //     index1+=1;
+            //     task+="<li id="+index+">";
+            //     task+="<input type="+"radio"+" id="+index1+">";
+            //     task+=document.getElementById("tasks").value;
+            //     task+="</li>";
+            //     document.getElementById("list").innerHTML=task;
+            // }
             function Delete(){
                 var i = document.getElementById()
+            }
+            function Add(){
+                var list=document.createElement("li");
+                var text=document.createTextNode(document.getElementById("tasks").value);
+                list.appendChild(text);
+                if(document.getElementById("tasks").value === ""){
+                    alert("Please enter any Task!!!");
+                }
+                else{
+                    document.getElementById("ulist").appendChild(list);
+                }
             }
         </script>
     </head>
@@ -23,7 +34,7 @@
         <h1>TODO LIST</h1>
         <h4>Enter the Task : <input type="text" id="tasks"></h4>
         <button onclick="Add()">Add</button>
-        <ul id="list">
+        <ul id="ulist">
         </ul>
         <button onclick="Delete()">Delete</button>
     </body>

@@ -1,0 +1,27 @@
+body{
+    background-color:  rgb(176, 216, 240);
+    text-align: center;
+}
+h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 175px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;
+background-color: rgb(176, 216, 240);
+color: blue;}
+
+button{
+    background-color: rgb(8, 11, 236);
+    border-radius: 5px;
+    color: aliceblue;
+    padding: 10px;
+    width: 70px;
+}
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
+li{
+    margin-top: 20px;
+}
+input[Type="button"]{
+    text-align: center;
+    background-color: red;
+    margin-left: 40px;
+}
